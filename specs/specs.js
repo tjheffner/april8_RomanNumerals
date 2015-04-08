@@ -62,4 +62,28 @@ describe("romanNumeral", function() {
     it("should return 'XC' for an input value of 90", function() {
         expect(romanNumeral(90)).to.equal('XC');
     });
+
+    it("should return 'C' for an input value of 100", function() {
+        expect(romanNumeral(100)).to.equal('C');
+    });
+
+    it("should return 'CD' for an input value of 400", function() {
+        expect(romanNumeral(400)).to.equal('CD');
+    });
+
+    it("should return 'D' for an input value of 500", function() {
+        expect(romanNumeral(500)).to.equal('D');
+    });
+
+    it("should return 'CM' for an input value of 900", function() {
+        expect(romanNumeral(900)).to.equal('CM');
+    });
+
+    it("should return 'M' for an input value of 1000", function() {
+        expect(romanNumeral(1000)).to.equal('M');
+    });
+
+    it("should return 'MMMCMXCIX' for an input value of 3999", function() {
+        expect(romanNumeral(3999)).to.equal('MMMCMXCIX');
+    });
 });

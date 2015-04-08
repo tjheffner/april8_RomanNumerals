@@ -1,6 +1,5 @@
 var romanNumeral = function(value) {
 
-    // var allRomanNumerals = {'I': 1, 'V': 5, 'X': 10};
     var valueRoman = [];
 
     var four = "IIII";
@@ -8,22 +7,47 @@ var romanNumeral = function(value) {
     while (value > 0) {
         switch (value > 0) {
 
-            case ((value >= 90) && (value < 99)):
+            case (value >= 1000):
+                valueRoman.push('M');
+                value = value - 1000;
+                break;
+
+            case ((value >= 900) && (value < 1000)):
+                valueRoman.push('CM');
+                value = value - 900;
+                break;
+
+            case ((value >= 500) && (value < 900)):
+                valueRoman.push('D');
+                value = value - 500;
+                break;
+
+            case ((value >= 400) && (value < 500)):
+                valueRoman.push('CD');
+                value = value - 400;
+                break;
+
+            case ((value >= 100) && (value < 400)):
+                valueRoman.push('C');
+                value = value - 100;
+                break;
+
+            case ((value >= 90) && (value < 100)):
                 valueRoman.push('XC');
                 value = value - 90;
                 break;
 
-            case (value >= 50):
+            case ((value >= 50) && (value < 90)):
                 valueRoman.push('L');
                 value = value - 50;
                 break;
 
-            case ((value >= 40) && (value < 49)):
+            case ((value >= 40) && (value < 50)):
                 valueRoman.push('XL');
                 value = value - 40;
                 break;
 
-            case (value >= 10):
+            case ((value >= 10) && (value < 40)):
                 valueRoman.push('X');
                 value = value - 10;
                 break;
@@ -65,14 +89,14 @@ var romanNumeral = function(value) {
 
 };
 
-// $(document).ready(function() {
-//
-//     $('form#').submit(function(event) {
-//
-//
-//         $('#result').show();
-//         event.preventDefault();
-//
-//     });
-//
-// });
+$(document).ready(function() {
+
+    $('form#').submit(function(event) {
+
+
+        $('#result').show();
+        event.preventDefault();
+
+    });
+
+});
