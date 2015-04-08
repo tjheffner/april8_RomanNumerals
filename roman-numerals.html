@@ -8,19 +8,24 @@
     </head>
     <body>
         <div class="container">
-            <h1>Roman Numerals</h1>
+            <div class="page-header">
+                <img src="img/plumage.jpg"/>
+                <h1>Roman Numerals</h1>
+            </div>
 
-            <form id="value-input">
-                <div class="form-group">
-                    <label for="value">Enter a number to convert to a Roman Numeral</label>
-                    <input type="number" name="value" id="value" class="form-control" placeholder="0">
+            <div class="container-fluid">
+                <form id="value-input">
+                    <div class="form-group">
+                        <label for="value">Enter a number to convert to a Roman numeral:</label>
+                        <input type="number" name="value" id="value" class="form-control" placeholder="0">
+                    </div>
+                    <button type="submit" class="btn btn-info">Convert</button>
+                </form>
+
+                <div id="result">
+                    <h3>The Roman Numeral Equivalent is:</h3>
+                    <h2 id="converted" class="text-danger"></h2>
                 </div>
-                <button type="submit" class="btn btn-info">Convert</button>
-            </form>
-
-            <div id="result">
-                <h3>The Roman Numeral Equivalent is:</h3>
-                <p id="converted"></p>
             </div>
         </div>
     </body>

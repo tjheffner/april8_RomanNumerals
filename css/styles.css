@@ -2,18 +2,13 @@
     display: none;
 }
 
-#p-quarters {
-    display: none;
+img {
+    height: 120px;
+    width: 100px;
+    margin: 10px 10px 10px 0;
+    float: left;
 }
 
-#p-dimes {
-    display: none;
-}
-
-#p-nickels {
-    display: none;
-}
-
-#p-pennies {
-    display: none;
+h1 {
+    padding: 50px 0;
 }
