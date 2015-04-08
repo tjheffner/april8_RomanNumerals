@@ -91,8 +91,11 @@ var romanNumeral = function(value) {
 
 $(document).ready(function() {
 
-    $('form#').submit(function(event) {
+    $('form#value-input').submit(function(event) {
+        var input = $('input#value').val();
+        var result = romanNumeral(input);
 
+        $("#converted").text(result);
 
         $('#result').show();
         event.preventDefault();
