@@ -4,65 +4,65 @@ var romanNumeral = function(value) {
 
     var four = "IIII";
 
-    while (value > 0) {
-        switch (value > 0) {
 
-            case (value >= 1000):
+    while (value > 0) {
+
+            if (value >= 1000) {
                 valueRoman.push('M');
                 value = value - 1000;
-                break;
+            }
 
-            case ((value >= 900) && (value < 1000)):
+            if ((value >= 900) && (value < 1000)) {
                 valueRoman.push('CM');
                 value = value - 900;
-                break;
+            }
 
-            case ((value >= 500) && (value < 900)):
+            if ((value >= 500) && (value < 900)) {
                 valueRoman.push('D');
                 value = value - 500;
-                break;
+            }
 
-            case ((value >= 400) && (value < 500)):
+            if ((value >= 400) && (value < 500)) {
                 valueRoman.push('CD');
                 value = value - 400;
-                break;
+            }
 
-            case ((value >= 100) && (value < 400)):
-                valueRoman.push('C');
-                value = value - 100;
-                break;
+            if ((value >= 100) && (value < 400)) {
+                    valueRoman.push('C');
+                    value = value - 100;
+                }
 
-            case ((value >= 90) && (value < 100)):
-                valueRoman.push('XC');
-                value = value - 90;
-                break;
+            if ((value >= 90) && (value < 100)) {
+                    valueRoman.push('XC');
+                    value = value - 90;
+                }
 
-            case ((value >= 50) && (value < 90)):
-                valueRoman.push('L');
-                value = value - 50;
-                break;
+            if ((value >= 50) && (value < 90)) {
+                    valueRoman.push('L');
+                    value = value - 50;
+                }
 
-            case ((value >= 40) && (value < 50)):
-                valueRoman.push('XL');
-                value = value - 40;
-                break;
+            if ((value >= 40) && (value < 50)) {
+                    valueRoman.push('XL');
+                    value = value - 40;
+                }
 
-            case ((value >= 10) && (value < 40)):
-                valueRoman.push('X');
-                value = value - 10;
-                break;
+            if ((value >= 10) && (value < 40)) {
+                    valueRoman.push('X');
+                    value = value - 10;
+                }
 
-            case (value === 9):
-                valueRoman.push('IX');
-                value = value - 9;
-                break;
+            if (value === 9) {
+                    valueRoman.push('IX');
+                    value = value - 9;
+                }
 
-            case ((value >= 5) && (value < 9)):
-                valueRoman.push('V');
-                value = value - 5;
-                break;
+            if ((value >= 5) && (value < 9)) {
+                    valueRoman.push('V');
+                    value = value - 5;
+                }
 
-            case ((value < 5) && (value >= 0)):
+            if ((value < 5) && (value >= 0)) {
                 for (var i = 1; i <= value; i++) {
                     valueRoman.push('I');
                     value = value - 1;
@@ -71,18 +71,11 @@ var romanNumeral = function(value) {
                         return four.split("").indexOf(element) != -1;
                     });
 
-                    var test = convert_four.join("");
-
-                    if (test === "IIII") {
+                    if (convert_four.join("") === "IIII") {
                         valueRoman.splice((valueRoman.join("").length - 3), valueRoman.length, "V");
                     }
                 }
-                break;
-
-            //this only runs if nothing else does. stops our while loop.
-            default: value = 0;
-            break;
-        }
+            }
     }
 
     return valueRoman.join("");
